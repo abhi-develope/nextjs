@@ -19,7 +19,7 @@ const page = () => {
         })
        
         
-        console.log("snippet is ", snippet);
+        // console.log("snippet is ", snippet);
         redirect('/')
         
         
