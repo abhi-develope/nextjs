@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { prisma } from '@/lib/prisma'
+import Link from 'next/link'
 import React from 'react'
 
 type dynamicSnippetProps = {
@@ -21,11 +22,11 @@ const page: React.FC<dynamicSnippetProps> = async ({params}) => {
   return (
     <div className='max-w-[80%] mx-auto '>
       <div className='flex justify-end gap-4 mt-4'>
-       <Button className='bg-green-600'>Edit</Button>
+       <Link href={`/snippet/${id}/edit`}><Button className='bg-green-600'>Edit</Button></Link>
        <Button className='bg-red-600'>Delete</Button>
       </div>
       <div>
-        <p className='text-2xl font-bold p-2'>{snippet?.title}</p>
+        <p className='text-2xl font-bold p-2 text-red-600'>{snippet?.title}</p>
       </div>
       <div className='border border-gray-400 rounded-md min-h-[400px] bg-black text-white p-6  '>
         <pre >
